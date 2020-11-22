@@ -1,0 +1,29 @@
+# Spotify pricing tier as an example
+
+premium:
+  level: 1
+  scopes:
+    - adsFree
+    - offline
+  meta:
+    price: '4.99'
+    accounts: 1
+
+student:
+  level: 2
+  inherit: premium
+  scopes:
+    - discount
+  meta:
+    price: '2.49'
+    accounts: 1
+
+family:
+  level: 3
+  inherit: premium
+  scopes:
+    - familyMix
+    - explicitBlock
+  meta:
+    price: '7.99'
+    accounts: 6
