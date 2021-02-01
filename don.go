@@ -92,6 +92,16 @@ func (ds *Dons) Get(key string) Don {
 	return ds.dons[key]
 }
 
+// Scope returns a true if the one of the given dons has access to the specified scope.
+func (ds *Dons) Scope(scope string, keys ...string) bool {
+	for _, key := range keys {
+		if ds.Get(key).Scope(scope) {
+			return true
+		}
+	}
+	return false
+}
+
 // Scope returns true if the don has access to the specified scope.
 func (d Don) Scope(key string) bool {
 	return d.scop[key]
